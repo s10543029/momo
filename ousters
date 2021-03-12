@@ -1,0 +1,27 @@
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.implicitly_wait( 20 )
+driver.get('https://www.momoshop.com.tw/main/Main.jsp')
+commit = driver.find_element_by_id("LOGINSTATUS")
+commit.click()
+username = ("你的帳號")
+elem = driver.find_element_by_id("memId")
+elem.send_keys(username)
+
+
+driver.implicitly_wait( 1 )
+password = ("你的密碼")
+elem = driver.find_element_by_id("passwd_show")
+elem.send_keys(password)
+commit = driver.find_element_by_class_name("loginBtn")
+commit.click()
+
+
+elem = driver.find_element_by_id("keyword")
+elem.send_keys('魔物獵人崛起')  #關鍵字輸入
+commit = driver.find_element_by_class_name("inputbtn")
+commit.click()
+commit = driver.find_element_by_class_name("prdImg")
+commit.click()
+driver.find_element_by_css_selector('.buynow').click()
+driver.find_element_by_css_selector('.checkoutBtn').click()
