@@ -11,9 +11,8 @@ username = ("you account number")
 elem = driver.find_element_by_id("memId")
 elem.send_keys(username)
 
-time.sleep( 35 )##強制35秒運行
-
-passwd = ("you password")
+passwd = ("you password")#Writ in Jupyternotebook to 第二列
+time.sleep( 10 )##強制10秒
 elem = driver.find_element_by_id("passwd_show")
 elem.send_keys(passwd)
 commit = driver.find_element_by_class_name("loginBtn")
